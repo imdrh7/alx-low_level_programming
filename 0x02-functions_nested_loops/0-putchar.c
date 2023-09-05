@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "main. h"
 
 /**
@@ -16,4 +17,25 @@ int main(void)
                              _putchar(str[ch]):
                 _putchar('\n'):
                return (0):
+=======
+#include "main.h"
+/**
+ * main - print _putchar
+ * is written by mbah
+ * Return: 0
+ */
+
+int main(void)
+{
+_putchar('_');
+_putchar('p');
+_putchar('u');
+_putchar('t');
+_putchar('c');
+_putchar('h');
+_putchar('a');
+_putchar('r');
+_putchar('\n');
+return (0);
+>>>>>>> df4adbf22c78e222f8cc2d8bd202b1ec2019f3ed
 }
