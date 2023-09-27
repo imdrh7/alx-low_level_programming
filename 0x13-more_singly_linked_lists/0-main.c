@@ -1,32 +1,18 @@
-#include <stdlib.h>
-#include <string.h>
 #include <stdio.h>
-#include "lists.h"
+#include "listint.h" // Include the custom header file
 
-/**
- * main - check the code
- * 
- * Return: Always 0.
- */
-int main(void)
-{
-    listint_t *head;
-    listint_t *new;
-    listint_t hello = {8, NULL};
-    size_t n;
+int main() {
+    // Example usage:
+    listint_t node1, node2, node3;
+    node1.n = 1;
+    node1.next = &node2;
+    node2.n = 2;
+    node2.next = &node3;
+    node3.n = 3;
+    node3.next = NULL;
 
-    head = &hello;
-    new = malloc(sizeof(listint_t));
-    if (new == NULL)
-    {
-        printf("Error\n");
-        return (1);
-    }
-    new->n = 9;
-    new->next = head;
-    head = new;
-    n = print_listint(head);
-    printf("-> %lu elements\n", n);
-    free(new);
-    return (0);
+    size_t node_count = print_listint(&node1);
+    printf("Number of nodes: %zu\n", node_count);
+
+    return 0;
 }
