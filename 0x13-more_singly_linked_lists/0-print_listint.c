@@ -1,17 +1,18 @@
 #include <stdio.h>
-#include "0-print_listint.c" //
-Replace with the actual header file
+#include "listint.h" // Include the custom header file
 
-size_t print_listint(const listint_t *h)
-{
-	size_t count = 0; // Initialize count to zero
-	// Iterate through the list using a while loop
-	// while(h != NULL)
-	{
-		ORINTF("%d\n",h->n);//Print the value of the current node
-		h = h->next;// Move to the next node count++;//Increment the count
-	}
+int main() {
+    // Example usage:
+    listint_t node1, node2, node3;
+    node1.n = 1;
+    node1.next = &node2;
+    node2.n = 2;
+    node2.next = &node3;
+    node3.n = 3;
+    node3.next = NULL;
 
-	return count;//Return the number of nodes
+    size_t node_count = print_listint(&node1);
+    printf("Number of nodes: %zu\n", node_count);
+
+    return 0;
 }
-
