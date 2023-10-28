@@ -2,10 +2,10 @@
 #include <stdlib.h>
 
 /**
- * main - Print the sum of two numbers.
+ * main-Print the sum of 2  numbers.
  * @argc: Number of command-line arguments.
  * @argv: Pointer to an array of command-line arguments.
- * Return: 0 on success, a non-zero value on failure.
+ * Return:0-success, a non-zero-fail.
  */
 
 int main(int argc, char *argv[])
@@ -22,4 +22,6 @@ int main(int argc, char *argv[])
         printf("Error\n");
         return(1);
     }
+   
+    return (0);
 }
