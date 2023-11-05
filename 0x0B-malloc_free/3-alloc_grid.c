@@ -1,4 +1,5 @@
-#include"main.h"
+#include "main.h"
+#include <stdlib.h>
 
 /**
  * **alloc_grid - return a pointer to a 2 dimensional array of integers.
@@ -9,31 +10,43 @@
 
 int **alloc_grid(int width, int height)
 {
-	int **tap, i, j;
+	int i, j, k, l;
+	int **a;
 
-	tab = malloc(sizeof(*tab) * height);
+	if (width <= 0 || height <= 0)
+		return (NULL);
 
-	if (width <= 0 || height <= 0 || tab == 0)
+	a = malloc(sizeof(int *) * height);
+
+	if (a == NULL)
 	{
+		free(a);
 		return (NULL);
 	}
-	else
+
+	for (i = 0; i < height; i++)
 	{
-		for (i = 0; i < height; i++)
+		a[i] = malloc(sizeof(int) * width);
+
+		if (a[i] == NULL)
 		{
-			tab[i] = malloc(sizeof(**tab) * width);
-			if (tab[i] == 0)
+			for (j = i; j >= 0; j--)
 			{
-				/*Free evrything if malloc fails*/
-				while (i--)
-					free(tab[i]);
-				free(tab);
-				return (NULL);
+				free(a[j]);
 			}
-			for (j = 0; j < width; j++)
-				tap[i][j] = 0;
+
+			free(a);
+			return (NULL);
 		}
 	}
 
-	return (tab);
+	for (k = 0; k < height; k++)
+	{
+		for (l = 0; l < width; l++)
+		{
+			a[k][l] = 0;
+		}
+	}
+
+	return (a);
 }
