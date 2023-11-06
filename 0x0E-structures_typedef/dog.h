@@ -9,11 +9,10 @@
  *
  * Description: just a long dog struct in a big kitty world
  */
-
 struct dog
 {
 	char *name;
-	float *age;
+	float age;
 	char *owner;
 };
 
